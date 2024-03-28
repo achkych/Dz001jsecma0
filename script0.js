@@ -15,17 +15,25 @@ console.log(Math.min(...arr));
 */
 
 function createCounter() {
-    const obj = {
-        increment: (number) => ++number,
-        decrement: (number) => --number       
-    }
-    return obj;  
+  let count = 0;
+  
+  const obj = {
+      increment: () => {
+          count++;
+          return count;
+      },
+      decrement: () => {
+          count--;
+          return count;
+      }  
+  }
+  return obj;  
 }
 
 const newObj = createCounter();
-console.log(newObj.increment(10)); // Увеличивает счетчик на 1
-console.log(newObj.increment(11)); // Увеличивает счетчик еще на 1
-console.log(newObj.decrement(12)); // Уменьшает счетчик на 1
+console.log(newObj.increment()); // Увеличивает счетчик на 1
+console.log(newObj.increment()); // Увеличивает счетчик еще на 1
+console.log(newObj.decrement()); // Уменьшает счетчик на 1
 
 
 
